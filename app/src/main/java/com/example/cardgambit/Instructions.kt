@@ -1,12 +1,12 @@
 package com.example.cardgambit
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cardgambit.databinding.ActivityInstructionsBinding
-import com.example.cardgambit.databinding.ActivityMainBinding
 
 class Instructions : AppCompatActivity() {
 
@@ -23,6 +23,10 @@ class Instructions : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        binding.btnResult.setOnClickListener{
+            val newIntent = Intent(this, Result::class.java)
+            startActivity(newIntent)
         }
     }
 }

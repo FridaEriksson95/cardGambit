@@ -7,4 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".StartGame">
 
+    <com.google.android.material.button.MaterialButton
+        android:text="frontPage"
+        android:id="@+id/btn_frontPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

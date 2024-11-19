@@ -1,12 +1,12 @@
 package com.example.cardgambit
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cardgambit.databinding.ActivityGameBoardBinding
-import com.example.cardgambit.databinding.ActivityMainBinding
 
 class GameBoard : AppCompatActivity() {
 
@@ -24,5 +24,12 @@ class GameBoard : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        binding.btnInstructions.setOnClickListener{
+            val newIntent = Intent(this, Instructions::class.java)
+            startActivity(newIntent)
+        }
     }
 }
+
+
+// Fragments och slumpa kort!

@@ -7,4 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".Instructions">
 
+    <com.google.android.material.button.MaterialButton
+        android:text="result"
+        android:id="@+id/btn_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
