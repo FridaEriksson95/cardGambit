@@ -24,8 +24,12 @@ class StartGame : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnFrontPage.setOnClickListener{
-            val newIntent = Intent(this, FrontPage::class.java)
+        binding.btnAI.setOnClickListener{
+            val newIntent = Intent(this, GameBoardAI::class.java)
+            startActivity(newIntent)
+        }
+        binding.btnFriend.setOnClickListener{
+            val newIntent = Intent(this, GameBoardFriend::class.java)
             startActivity(newIntent)
         }
     }

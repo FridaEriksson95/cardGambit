@@ -1,22 +1,21 @@
 package com.example.cardgambit
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.cardgambit.databinding.ActivityGameBoardBinding
+import com.example.cardgambit.databinding.ActivityGameBoardAiBinding
 
-class GameBoard : AppCompatActivity() {
+class GameBoardAI : AppCompatActivity() {
 
-    private lateinit var binding : ActivityGameBoardBinding
+    private lateinit var binding : ActivityGameBoardAiBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val binding = ActivityGameBoardBinding.inflate(layoutInflater)
+        val binding = ActivityGameBoardAiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -24,12 +23,7 @@ class GameBoard : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnInstructions.setOnClickListener{
-            val newIntent = Intent(this, Instructions::class.java)
-            startActivity(newIntent)
-        }
     }
 }
-
 
 // Fragments och slumpa kort!
