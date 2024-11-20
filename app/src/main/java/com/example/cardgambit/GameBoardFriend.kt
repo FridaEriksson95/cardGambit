@@ -6,17 +6,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.cardgambit.databinding.ActivityFrontPageBinding
+import com.example.cardgambit.databinding.ActivityGameBoardFriendBinding
 
-class FrontPage : AppCompatActivity() {
+class GameBoardFriend : AppCompatActivity() {
 
-    private lateinit var binding : ActivityFrontPageBinding
+    private lateinit var binding : ActivityGameBoardFriendBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val binding = ActivityFrontPageBinding.inflate(layoutInflater)
+        val binding = ActivityGameBoardFriendBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -24,15 +24,12 @@ class FrontPage : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding.btnStartgame.setOnClickListener{
-            val newIntent = Intent(this, StartGame::class.java)
-            startActivity(newIntent)
-        }
-
         binding.btnInstructions.setOnClickListener{
             val newIntent = Intent(this, Instructions::class.java)
             startActivity(newIntent)
         }
     }
 }
+
+
+// Fragments och slumpa kort!

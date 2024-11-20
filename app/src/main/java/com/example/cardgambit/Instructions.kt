@@ -24,8 +24,8 @@ class Instructions : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnResult.setOnClickListener{
-            val newIntent = Intent(this, Result::class.java)
+        binding.btnStartgame.setOnClickListener{
+            val newIntent = Intent(this, StartGame::class.java)
             startActivity(newIntent)
         }
     }

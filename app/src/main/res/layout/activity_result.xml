@@ -7,10 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".Result">
 
+    <ImageView
+        android:id="@+id/Bridge"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bridgecards" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
     <com.google.android.material.button.MaterialButton
         android:text="startGame"
         android:id="@+id/btn_startgame"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/lavender"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:text="Exit"
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lavender"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
