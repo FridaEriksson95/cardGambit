@@ -7,34 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".Instructions">
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/bridgeInstructions"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/bridgecards"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-0dp" />
-    <ImageView
-        android:id="@+id/backesideInstructions"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        app:srcCompat="@drawable/backsidecard"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="40dp" />
 
-    <com.google.android.material.button.MaterialButton
-    android:id="@+id/btn_startgame"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:backgroundTint="@color/red"
-    android:text="Start Game"
-    app:layout_constraintBottom_toBottomOf="parent"
-    tools:layout_editor_absoluteX="0dp" />
-</LinearLayout>
+        <ImageView
+            android:id="@+id/backsideInstructions"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:alpha="0.5"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/backsidecard" />
+
+        <TextView
+            android:id="@+id/tv_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="MASSA INSTRUKTIONER"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_startgame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:text="   START  "
+            app:layout_constraintTop_toBottomOf="@+id/backsideInstructions" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_card_gambit"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:elegantTextHeight="false"
+        android:fontFamily="@font/inknut_antiqua_bold"
+        android:lineSpacingExtra="0dp"
+        android:lineSpacingMultiplier="0.5"
+        android:shadowColor="@color/red"
+        android:shadowDx="8"
+        android:shadowDy="8"
+        android:shadowRadius="30"
+        android:text="CARD GAMBIT"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inknut_antiqua_bold"
+        android:text="INSTRUKTIONER"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_gambit" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

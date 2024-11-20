@@ -18,14 +18,35 @@
         <ImageView
             android:id="@+id/Bridge"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:scaleType="fitCenter"
+            android:layout_height="198dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/bridgecards" />
+
+        <TextView
+            android:id="@+id/tv_card_gambit"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="-40dp"
+            android:elegantTextHeight="false"
+            android:fontFamily="@font/inknut_antiqua_bold"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="0.5"
+            android:shadowColor="@color/red"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="30"
+            android:text="CARD GAMBIT"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
 
         <ImageView
             android:id="@+id/Card"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="300dp"
             android:scaleType="fitCenter"
             android:src="@drawable/backsidecard" />
 
@@ -43,25 +64,30 @@
         app:layout_constraintVertical_weight="2">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_startgame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginRight="30dp"
+            android:text="      START      "
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="836dp" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_instructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/red"
             android:text="How To Play"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="365dp"
             tools:layout_editor_absoluteY="818dp" />
 
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_startgame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/red"
-            android:text="START"
-            tools:layout_editor_absoluteX="60dp"
-            tools:layout_editor_absoluteY="836dp" />
     </LinearLayout>
 
 

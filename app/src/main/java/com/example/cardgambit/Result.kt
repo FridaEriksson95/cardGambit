@@ -25,13 +25,13 @@ class Result : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnStartgame.setOnClickListener{
+        binding.btnRestartgame.setOnClickListener{
             val newIntent = Intent(this, StartGame::class.java)
             startActivity(newIntent)
         }
 
-        binding.btnInstructions.setOnClickListener{
-            val newIntent = Intent(this, Instructions::class.java)
+        binding.btnQuit.setOnClickListener{
+            val newIntent = Intent(this, FrontPage::class.java)
             startActivity(newIntent)
         }
     }
