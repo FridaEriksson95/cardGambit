@@ -29,5 +29,10 @@ class Result : AppCompatActivity() {
             val newIntent = Intent(this, StartGame::class.java)
             startActivity(newIntent)
         }
+
+        binding.btnInstructions.setOnClickListener{
+            val newIntent = Intent(this, Instructions::class.java)
+            startActivity(newIntent)
+        }
     }
 }

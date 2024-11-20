@@ -16,14 +16,14 @@
         app:layout_constraintVertical_weight="1">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/Bridge"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="fitCenter"
             android:src="@drawable/bridgecards" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/Card"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="fitCenter"
@@ -52,10 +52,6 @@
             tools:layout_editor_absoluteX="365dp"
             tools:layout_editor_absoluteY="818dp" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_startgame"
