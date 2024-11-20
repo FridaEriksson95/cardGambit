@@ -6,14 +6,158 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameBoardFriend">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_instructions"
+        android:id="@+id/btn_player2_lower"
+        android:layout_width="209dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center_horizontal"
+        android:text="Lower"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="46dp"
+        app:icon="@drawable/baseline_arrow_drop_down_24"
+        android:rotation="180"
+        app:iconGravity="top"
+        app:iconPadding="@dimen/cardview_default_elevation"
+        app:iconSize="90dp"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="27dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_player2_higher"
+        android:layout_width="207dp"
+        android:layout_height="197dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/red"
+        android:gravity="center_horizontal"
+        android:text="Higher"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="46dp"
+        app:icon="@drawable/baseline_arrow_drop_up_24"
+        android:rotation="180"
+        app:iconGravity="top"
+        app:iconPadding="@dimen/cardview_default_elevation"
+        app:iconSize="90dp"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="27dp" />
+</LinearLayout>
+
+    <EditText
+        android:id="@+id/player1_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="212dp"
+        android:text="Score: "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="496dp" />
+
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="220dp"
+        android:layout_height="260dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/backsidecard" />
+
+    <EditText
+        android:id="@+id/player2_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="136dp"
+        android:rotation="180"
+        android:textStyle="bold"
+        android:text="Score: "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="191dp" />
+
+    <EditText
+        android:id="@+id/count_rounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="328dp"
+        android:rotation="270"
+        android:text="Round: "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.525" />
+
+    <LinearLayout
+        android:id="@+id/playerButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blue"
-        android:text="Instructions"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="120dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardImage"
+        app:layout_constraintVertical_bias="1.0">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_player1_higher"
+            android:layout_width="209dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/red"
+            android:gravity="center_horizontal"
+            android:text="Higher"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:cornerRadius="46dp"
+            app:icon="@drawable/baseline_arrow_drop_up_24"
+            app:iconGravity="top"
+            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconSize="90dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="27dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_player1_lower"
+            android:layout_width="207dp"
+            android:layout_height="197dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/red"
+            android:gravity="center_horizontal"
+            android:text="Lower"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:cornerRadius="46dp"
+            app:icon="@drawable/baseline_arrow_drop_down_24"
+            app:iconGravity="top"
+            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconSize="90dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="27dp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
