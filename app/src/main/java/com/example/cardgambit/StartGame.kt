@@ -2,7 +2,11 @@ package com.example.cardgambit
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.ColorSpace.Rgb
 import android.os.Bundle
+import android.view.View
+import android.widget.RadioButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,18 +30,30 @@ class StartGame : AppCompatActivity() {
             insets
         }
         binding.btnAI.setOnClickListener{
-            val newIntent = Intent(this, GameBoardAI::class.java)
-            startActivity(newIntent)
+        binding.btnAI.setBackgroundColor(Color.rgb(29, 105, 29))
+
+            binding.radioGroup.visibility = View.VISIBLE
+            binding.btnLetsPlay.visibility = View.VISIBLE
         }
         binding.btnFriend.setOnClickListener{
-            val newIntent = Intent(this, GameBoardFriend::class.java)
-            startActivity(newIntent)
+            binding.btnFriend.setBackgroundColor(Color.rgb(29, 105, 29))
+
+            binding.radioGroup.visibility = View.VISIBLE
+            binding.btnLetsPlay.visibility = View.VISIBLE
         }
-    }
-    private fun pressedButtonColors(buttonIndex : Int){
-        when(buttonIndex){
-            0 -> binding.btnAI.setBackgroundColor(Color.GREEN)
-            1 -> binding.btnFriend.setBackgroundColor(Color.GREEN)
+        binding.btnLetsPlay.setOnClickListener {
+            val selectedOptionId = binding.radioGroup.checkedRadioButtonId
+
+            if(selectedOptionId == -1) {
+                Toast.makeText(this, "Choose amount of rounds", Toast.LENGTH_SHORT).show()
+            }else{
+                val selectedRadioButton = findViewById<RadioButton>(selectedOptionId)
+                val rounds = selectedRadioButton.text.toString()
+
+                Toast.makeText(this, "You choose $rounds rounds", Toast.LENGTH_SHORT).show()
+                val newIntent = Intent(this, GameBoardFriend::class.java)
+                startActivity(newIntent)
+            }
         }
     }
 }
