@@ -1,6 +1,7 @@
 package com.example.cardgambit
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,12 @@ class StartGame : AppCompatActivity() {
         binding.btnFriend.setOnClickListener{
             val newIntent = Intent(this, GameBoardFriend::class.java)
             startActivity(newIntent)
+        }
+    }
+    private fun pressedButtonColors(buttonIndex : Int){
+        when(buttonIndex){
+            0 -> binding.btnAI.setBackgroundColor(Color.GREEN)
+            1 -> binding.btnFriend.setBackgroundColor(Color.GREEN)
         }
     }
 }
