@@ -24,9 +24,17 @@ class GameBoardFriend : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnInstructions.setOnClickListener{
-            val newIntent = Intent(this, Instructions::class.java)
-            startActivity(newIntent)
+        binding.btnPlayer1Lower.setOnClickListener{
+
+        }
+        binding.btnPlayer2Lower.setOnClickListener{
+
+        }
+        binding.btnPlayer1Higher.setOnClickListener{
+
+        }
+        binding.btnPlayer2Higher.setOnClickListener{
+
         }
     }
 }
