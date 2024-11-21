@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.CardGambit" parent="Base.Theme.CardGambit" />
+    <color name="custom_radio_color">#1A431C</color>
 </resources>

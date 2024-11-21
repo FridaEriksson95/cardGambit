@@ -71,6 +71,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/buttonContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -83,22 +84,29 @@
         app:layout_constraintTop_toBottomOf="@id/radioButtonHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:visibility="gone">
 
         <RadioButton
             android:id="@+id/radioOption1"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/custom_radio_color"
             android:text="First to 3" />
 
         <RadioButton
             android:id="@+id/radioOption2"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="@color/custom_radio_color"
             android:text="First to 5" />
 
         <RadioButton
             android:id="@+id/radioOption3"
+            android:textColor="@color/black"
+            android:buttonTint="@color/styles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="First to 10" />
@@ -111,6 +119,7 @@
         android:layout_marginBottom="60dp"
         android:backgroundTint="@color/red"
         android:text="LET'S PLAY"
+        android:id="@+id/btn_letsPlay"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
