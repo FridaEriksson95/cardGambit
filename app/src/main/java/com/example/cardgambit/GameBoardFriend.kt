@@ -13,8 +13,6 @@ class GameBoardFriend : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBoardFriendBinding
     val selectedAnswer = arrayOf(0, 1, 2, 3)
-    val options = arrayOf(arrayOf(binding.btnPlayer1Lower, binding.btnPlayer1Higher),
-        arrayOf(binding.btnPlayer2Lower, binding.btnPlayer2Higher))
 
     var currentIndex = 0
 
@@ -22,8 +20,11 @@ class GameBoardFriend : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val binding = ActivityGameBoardFriendBinding.inflate(layoutInflater)
+        binding = ActivityGameBoardFriendBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val options = arrayOf(arrayOf(binding.btnPlayer1Lower, binding.btnPlayer1Higher),
+            arrayOf(binding.btnPlayer2Lower, binding.btnPlayer2Higher))
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -31,39 +32,18 @@ class GameBoardFriend : AppCompatActivity() {
             insets
         }
         binding.btnPlayer1Lower.setOnClickListener {
-            if (currentIndex == 0) {
-                binding.btnPlayer1Lower.setBackgroundColor(Color.GREEN)
-            } else {
-                binding.btnPlayer1Lower.setBackgroundColor(Color.RED)
-            }
+                binding.btnPlayer1Lower.setBackgroundColor(Color.rgb(29, 105, 29))
         }
         binding.btnPlayer1Higher.setOnClickListener {
-            if (currentIndex == 1) {
-                binding.btnPlayer1Higher.setBackgroundColor(Color.GREEN)
-            } else {
-                binding.btnPlayer1Higher.setBackgroundColor(Color.RED)
-            }
+                binding.btnPlayer1Higher.setBackgroundColor(Color.rgb(29, 105, 29))
         }
         binding.btnPlayer2Lower.setOnClickListener {
-            if (currentIndex == 2) {
-                binding.btnPlayer2Lower.setBackgroundColor(Color.GREEN)
-            } else {
-                binding.btnPlayer2Lower.setBackgroundColor(Color.RED)
+                binding.btnPlayer2Lower.setBackgroundColor(Color.rgb(29, 105, 29))
             }
-        }
         binding.btnPlayer2Higher.setOnClickListener {
-            if (currentIndex == 3) {
-                binding.btnPlayer2Higher.setBackgroundColor(Color.GREEN)
-            } else {
-                binding.btnPlayer2Higher.setBackgroundColor(Color.RED)
+                binding.btnPlayer2Higher.setBackgroundColor(Color.rgb(29, 105, 29))
             }
         }
     }
-}
-
-
-
-
-
 
 // Fragments och slumpa kort!
