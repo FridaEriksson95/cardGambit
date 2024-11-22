@@ -72,10 +72,10 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutPlayer1Buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardImage" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_backImage" />
 
     <ImageView
-        android:id="@+id/cardImage"
+        android:id="@+id/iv_backImage"
         android:layout_width="240dp"
         android:layout_height="285dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +95,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cardImage"
+        app:layout_constraintBottom_toTopOf="@+id/iv_backImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutPlayer2Buttons" />
@@ -127,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardImage"
+        app:layout_constraintTop_toBottomOf="@id/iv_backImage"
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.button.MaterialButton
