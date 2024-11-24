@@ -9,6 +9,7 @@ import android.view.ViewGroup
 class GameFragment : Fragment() {
 
     val cardsMap = mapOf(
+        R.drawable.one to 1,
         R.drawable.two to 2,
         R.drawable.three to 3,
         R.drawable.four to 4,
@@ -20,8 +21,7 @@ class GameFragment : Fragment() {
         R.drawable.ten to 10,
         R.drawable.eleven to 11,
         R.drawable.twelve to 12,
-        R.drawable.thirteen to 13,
-        R.drawable.one to 1
+        R.drawable.thirteen to 13
     )
 
     var previousCardValue: Int = getRandomCardValue()
