@@ -18,15 +18,14 @@ class GameBoardFriend : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBoardFriendBinding
     private lateinit var gamefrag : GameFragment
-    lateinit var random:Random
 
-    lateinit var player1_score : TextView
-    lateinit var player2_score : TextView
-
-    lateinit var iv_backImage : ImageView
-    var player1Score = 0
-    var player2Score = 0
     var previousCardValue = 0
+
+    private var p1Guess = false
+    private var p2Guess = false
+
+    private var p1Choice: Boolean? = null
+    private var p2Choice: Boolean? = null
 
     // ----------------------------onCreate----------------------------
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,12 +41,6 @@ class GameBoardFriend : AppCompatActivity() {
 
         setupGame()
 
-//        random = Random
-//        iv_backImage = findViewById(R.id.iv_backImage)
-//        iv_backImage.setImageResource(R.drawable.backsidecard)
-//        val cardBack = random.nextInt(gamefrag.cardsMap.size)
-//        player1_score = findViewById(R.id.player1_score)
-//        player2_score = findViewById(R.id.player2_score)
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -64,44 +57,38 @@ class GameBoardFriend : AppCompatActivity() {
     private fun setupGame() {
         val initialCard = gamefrag.getRandomCard()
         binding.ivBackImage.setImageResource(initialCard.first)
-        previousCardValue = initialCard.second
-
-        updateScores()
     }
 
     private fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
-        val newCard = gamefrag.getRandomCard()
-        val newCardDrawable = newCard.first
-        val newCardValue = newCard.second
+        if (player == 1) {
+            p1Choice = guessHigher
+            p1Guess = true
+        } else if (player == 2) {
+            p2Choice = guessHigher
+            p2Guess = true
+        }
+        if (p1Guess && p2Guess) {
+            val newCard = gamefrag.getRandomCard()
+            val newCardDrawable = newCard.first
+            val newCardValue = newCard.second
 
-        val isCorrect = gamefrag.isGuessCorrect(newCardValue, guessHigher)
-        gamefrag.updateScore(player, isCorrect)
+            val isP1Correct = gamefrag.isGuessCorrect(newCardValue, p1Choice!!)
+            val isP2Correct = gamefrag.isGuessCorrect(newCardValue, p2Choice!!)
 
-        updateButtonColors(player, guessHigher, isCorrect)
-        binding.ivBackImage.setImageResource(newCardDrawable)
+            gamefrag.updateScore(1, isP1Correct)
+            gamefrag.updateScore(2, isP2Correct)
 
-        previousCardValue = newCardValue
-        updateScores()
-    }
+            binding.ivBackImage.setImageResource(newCardDrawable)
+            previousCardValue = newCardValue
+            updateScores()
+            p1Guess = false
+            p2Guess = false
+            p1Choice = null
+            p2Choice = null
 
-    private fun updateButtonColors(player: Int, guessHigher: Boolean, isCorrect: Boolean) {
-        val correctColor = Color.GREEN
-        val wrongColor = Color.RED
-
-        if(player == 1) {
-            if (guessHigher) {
-                binding.btnPlayer1Higher.setBackgroundColor(if (isCorrect) correctColor else wrongColor)
-            } else {
-                binding.btnPlayer1Lower.setBackgroundColor(if (isCorrect) correctColor else wrongColor)
-            }
-        } else {
-            if (guessHigher) {
-                binding.btnPlayer2Higher.setBackgroundColor(if (isCorrect) correctColor else wrongColor)
-            } else {
-                binding.btnPlayer2Lower.setBackgroundColor(if (isCorrect) correctColor else wrongColor)
-            }
         }
     }
+
     private fun updateScores() {
         binding.player1Score.text = "Player 1 Score: ${gamefrag.player1score}"
         binding.player2Score.text = "Player 2 Score: ${gamefrag.player2score}"
