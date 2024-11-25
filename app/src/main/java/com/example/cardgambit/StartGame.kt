@@ -49,11 +49,19 @@ class StartGame : AppCompatActivity() {
                 Toast.makeText(this, "Choose amount of rounds", Toast.LENGTH_SHORT).show()
             }else{
                 val selectedRadioButton = findViewById<RadioButton>(selectedOptionId)
-                val rounds = selectedRadioButton.text.toString()
+                val roundsText = selectedRadioButton.text.toString()
 
-                Toast.makeText(this, "You choose $rounds rounds", Toast.LENGTH_SHORT).show()
-                val newIntent = Intent(this, GameBoardFriend::class.java)
-                startActivity(newIntent)
+                val rounds = roundsText.filter { it.isDigit() }.toIntOrNull()
+
+                if(rounds != null) {
+                    Toast.makeText(this, "You choose $rounds rounds", Toast.LENGTH_SHORT).show()
+                    val newIntent = Intent(this, GameBoardFriend::class.java)
+                    newIntent.putExtra("ROUNDS", rounds)
+                    startActivity(newIntent)
+                } else {
+                    Toast.makeText(this, "Invalid selection", Toast.LENGTH_SHORT).show()
+                }
+
             }
         }
     }

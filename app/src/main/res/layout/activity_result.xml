@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Result">
+    tools:context=".Result"
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/Bridge"
@@ -18,7 +19,6 @@
         android:id="@+id/tv_card_gambit"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="4dp"
         android:elegantTextHeight="false"
         android:fontFamily="@font/inknut_antiqua_bold"
         android:lineSpacingExtra="0dp"
@@ -32,8 +32,9 @@
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="155dp" />
+        app:layout_constraintStart_toStartOf="@+id/Bridge"
+        app:layout_constraintTop_toBottomOf="@+id/Bridge"
+        app:layout_constraintBottom_toTopOf="@+id/tv_winner"/>
 
     <TextView
         android:id="@+id/tv_winner"
