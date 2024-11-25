@@ -3,6 +3,7 @@ package com.example.cardgambit
 import android.app.Instrumentation.ActivityResult
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,6 +20,11 @@ class Result : AppCompatActivity() {
 
         val binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val winner = intent.getStringExtra("Winner") ?: "No winner"
+
+        val winnerTextView : TextView = binding.tvResult
+        winnerTextView.text = "$winner"
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

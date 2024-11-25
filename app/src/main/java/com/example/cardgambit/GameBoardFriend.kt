@@ -38,8 +38,6 @@ class GameBoardFriend : AppCompatActivity() {
         setContentView(binding.root)
 
         gamefrag = GameFragment()
-        binding.player1Score.text = "Player 1 Score: 0"
-        binding.player2Score.text = "Player 2 Score: 0"
 
         totalRounds = intent.getIntExtra("ROUNDS", 1)
         setupGame()
@@ -117,13 +115,22 @@ class GameBoardFriend : AppCompatActivity() {
             if (currentRound <= totalRounds) {
                 updateRoundCount()
             } else {
-                endGame()
+                binding.ivBackImage.postDelayed({
+                    endGame()
+                }, 2000)
             }
         }
     private fun endGame() {
         val resultIntent = Intent(this, Result::class.java)
         resultIntent.putExtra("Player1Score", gamefrag.player1score)
         resultIntent.putExtra("Player2Score", gamefrag.player2score)
+
+        val winner = when {
+            gamefrag.player1score > gamefrag.player2score -> "Player 1"
+            gamefrag.player2score > gamefrag.player1score -> "Player 2"
+            else -> "It's a draw!"
+        }
+        resultIntent.putExtra("Winner", winner)
         startActivity(resultIntent)
 
         finish()
