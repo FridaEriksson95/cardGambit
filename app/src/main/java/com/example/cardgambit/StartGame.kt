@@ -19,6 +19,7 @@ class StartGame : AppCompatActivity() {
     private lateinit var binding : ActivityStartGameBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
@@ -30,13 +31,20 @@ class StartGame : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         binding.btnAI.setOnClickListener{
+            binding.btnAI.setBackgroundColor(Color.rgb(139,16,16))
+            binding.btnFriend.setBackgroundColor(Color.rgb(139,16,16))
+
         binding.btnAI.setBackgroundColor(Color.rgb(29, 105, 29))
 
             binding.radioGroup.visibility = View.VISIBLE
             binding.btnLetsPlay.visibility = View.VISIBLE
         }
         binding.btnFriend.setOnClickListener{
+            binding.btnAI.setBackgroundColor(Color.rgb(139,16,16))
+            binding.btnFriend.setBackgroundColor(Color.rgb(139,16,16))
+
             binding.btnFriend.setBackgroundColor(Color.rgb(29, 105, 29))
 
             binding.radioGroup.visibility = View.VISIBLE
@@ -61,7 +69,6 @@ class StartGame : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Invalid selection", Toast.LENGTH_SHORT).show()
                 }
-
             }
         }
     }

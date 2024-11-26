@@ -1,21 +1,27 @@
 package com.example.cardgambit
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cardgambit.databinding.ActivityGameBoardAiBinding
+import java.lang.Math.random
 
-class GameBoardAI : AppCompatActivity() {
+class GameBoardAI : GameBoardFriend() {
 
-    private lateinit var binding : ActivityGameBoardAiBinding
+    private lateinit var binding: ActivityGameBoardAiBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val binding = ActivityGameBoardAiBinding.inflate(layoutInflater)
+        binding = ActivityGameBoardAiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -25,5 +31,3 @@ class GameBoardAI : AppCompatActivity() {
         }
     }
 }
-
-// Fragments och slumpa kort!

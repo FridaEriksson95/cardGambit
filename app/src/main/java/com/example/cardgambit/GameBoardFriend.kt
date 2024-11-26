@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.cardgambit.databinding.ActivityGameBoardFriendBinding
 import java.lang.Math.random
 
-class GameBoardFriend : AppCompatActivity() {
+open class GameBoardFriend : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBoardFriendBinding
     private lateinit var gamefrag : GameFragment
@@ -29,7 +29,6 @@ class GameBoardFriend : AppCompatActivity() {
     private var totalRounds: Int = 0
 
 
-    // ----------------------------onCreate----------------------------
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -53,10 +52,10 @@ class GameBoardFriend : AppCompatActivity() {
         binding.btnPlayer2Higher.setOnClickListener { handlePlayerGuess(2, true) }
         binding.btnPlayer2Lower.setOnClickListener { handlePlayerGuess(2, false) }
     }
+
     private fun setupGame() {
         val initialCard = gamefrag.getRandomCard()
         binding.ivBackImage.setImageResource(initialCard.first)
-//        previousCardValue = initialCard.second
 
         updateScores()
         updateRoundCount()
@@ -90,10 +89,12 @@ class GameBoardFriend : AppCompatActivity() {
             evaluateGuesses()
         }
     }
+
     private fun updateRoundCount() {
         binding.countRounds.text = "Round $currentRound of $totalRounds"
     }
-        private fun evaluateGuesses() {
+
+    private fun evaluateGuesses() {
             val newCard = gamefrag.getRandomCard()
             val newCardDrawable = newCard.first
             val newCardValue = newCard.second
@@ -120,6 +121,7 @@ class GameBoardFriend : AppCompatActivity() {
                 }, 2000)
             }
         }
+
     private fun endGame() {
         val resultIntent = Intent(this, Result::class.java)
         resultIntent.putExtra("Player1Score", gamefrag.player1score)
@@ -152,10 +154,8 @@ class GameBoardFriend : AppCompatActivity() {
         binding.btnPlayer2Lower.setBackgroundColor(defaultColor)
     }
 
-
     private fun updateScores() {
         binding.player1Score.text = "Player 1 Score: ${gamefrag.player1score}"
         binding.player2Score.text = "Player 2 Score: ${gamefrag.player2score}"
     }
 }
-
