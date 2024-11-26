@@ -51,19 +51,11 @@ class GameFragment : Fragment() {
         }
     }
 
-    fun updatePreviousCardValue(newValue: Int) {
-        previousCardValue = newValue
-    }
-
-   // val randomCard = cardsMap.keys.random() // Slumpa fram en drawable
-   // val cardValue = cardsMap[randomCard]   // Hämta det numeriska värdet
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_game, container, false)
     }
 }
