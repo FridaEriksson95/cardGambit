@@ -26,6 +26,7 @@
         android:text="Want to play with: "
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
