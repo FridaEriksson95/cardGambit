@@ -9,21 +9,22 @@
     android:background="@color/white">
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <ImageView
             android:id="@+id/backsideInstructions"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_gravity="center"
             android:layout_marginTop="80dp"
-            android:alpha="0.5"
-            android:scaleType="centerCrop"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.3"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/backsidecard" />
 
         <TextView
@@ -32,8 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="MASSA INSTRUKTIONER"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
@@ -41,19 +44,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="30dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="@color/red"
             android:text="   START  "
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/backsideInstructions" />
     </FrameLayout>
 
     <TextView
         android:id="@+id/tv_card_gambit"
         android:layout_width="match_parent"
-        android:layout_height="192dp"
+        android:layout_height="187dp"
         android:elegantTextHeight="false"
         android:fontFamily="@font/inknut_antiqua_bold"
         android:lineSpacingExtra="0dp"
@@ -66,16 +68,19 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="60sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_instructions"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_header_instructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inknut_antiqua_bold"
         android:text="INSTRUKTIONER"
         android:textAlignment="center"
         android:textSize="25sp"
+        android:layout_marginTop="60dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/tv_card_gambit"
         android:textColor="@color/black"/>

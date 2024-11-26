@@ -13,11 +13,24 @@ class Instructions : AppCompatActivity() {
     private lateinit var binding : ActivityInstructionsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         val binding = ActivityInstructionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.tvInstructions.text = "När du startar spelet kommer \n " +
+                "ett random kort att dras. \n" +
+                "Om du spelar mot en vän ska \n" +
+                "ni båda gissa om kortet som \n" +
+                "vänds upp efter blir \n" +
+                "högre eller lägre än föregående \n" +
+                "kort. Den som gissar rätt får \n" +
+                "poäng, om ni båda gissar rätt, \n" +
+                "får båda poäng. Mest rätt efter \n" +
+                "antal valda rundor - vinner!"
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
