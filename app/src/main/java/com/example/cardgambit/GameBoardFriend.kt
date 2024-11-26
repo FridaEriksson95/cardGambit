@@ -16,17 +16,17 @@ import java.lang.Math.random
 open class GameBoardFriend : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBoardFriendBinding
-    private lateinit var gamefrag : GameFragment
+    protected lateinit var gamefrag : GameFragment
 
-    private var p1Guess: Boolean = false
-    private var p2Guess: Boolean = false
+    protected var p1Guess: Boolean = false
+    protected var p2Guess: Boolean = false
 
-    private var p1Choice: Boolean = false
+    protected var p1Choice: Boolean = false
     private var p2Choice: Boolean = false
 
     var previousCardValue = 0
-    private var currentRound = 1
-    private var totalRounds: Int = 0
+    protected var currentRound = 1
+    protected var totalRounds: Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +53,7 @@ open class GameBoardFriend : AppCompatActivity() {
         binding.btnPlayer2Lower.setOnClickListener { handlePlayerGuess(2, false) }
     }
 
-    private fun setupGame() {
+    protected open fun setupGame() {
         val initialCard = gamefrag.getRandomCard()
         binding.ivBackImage.setImageResource(initialCard.first)
 
@@ -61,7 +61,7 @@ open class GameBoardFriend : AppCompatActivity() {
         updateRoundCount()
     }
 
-    private fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
+    protected open fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
         if (player == 1) {
             p1Choice = guessHigher
             p1Guess = true
@@ -90,11 +90,11 @@ open class GameBoardFriend : AppCompatActivity() {
         }
     }
 
-    private fun updateRoundCount() {
+    protected fun updateRoundCount() {
         binding.countRounds.text = "Round $currentRound of $totalRounds"
     }
 
-    private fun evaluateGuesses() {
+    protected fun evaluateGuesses() {
             val newCard = gamefrag.getRandomCard()
             val newCardDrawable = newCard.first
             val newCardValue = newCard.second
@@ -122,7 +122,7 @@ open class GameBoardFriend : AppCompatActivity() {
             }
         }
 
-    private fun endGame() {
+    protected open fun endGame() {
         val resultIntent = Intent(this, Result::class.java)
         resultIntent.putExtra("Player1Score", gamefrag.player1score)
         resultIntent.putExtra("Player2Score", gamefrag.player2score)
@@ -138,7 +138,7 @@ open class GameBoardFriend : AppCompatActivity() {
         finish()
     }
 
-    private fun resetTurn() {
+    protected fun resetTurn() {
         p1Guess = false
         p2Guess = false
 
@@ -154,7 +154,7 @@ open class GameBoardFriend : AppCompatActivity() {
         binding.btnPlayer2Lower.setBackgroundColor(defaultColor)
     }
 
-    private fun updateScores() {
+    protected fun updateScores() {
         binding.player1Score.text = "Player 1 Score: ${gamefrag.player1score}"
         binding.player2Score.text = "Player 2 Score: ${gamefrag.player2score}"
     }
