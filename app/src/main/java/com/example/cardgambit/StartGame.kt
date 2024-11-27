@@ -17,6 +17,7 @@ import com.example.cardgambit.databinding.ActivityStartGameBinding
 class StartGame : AppCompatActivity() {
 
     private lateinit var binding : ActivityStartGameBinding
+    private var gameMode : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -33,15 +34,17 @@ class StartGame : AppCompatActivity() {
         }
 
         binding.btnAI.setOnClickListener{
+            gameMode = "AI"
             binding.btnAI.setBackgroundColor(Color.rgb(139,16,16))
             binding.btnFriend.setBackgroundColor(Color.rgb(139,16,16))
 
-        binding.btnAI.setBackgroundColor(Color.rgb(29, 105, 29))
+            binding.btnAI.setBackgroundColor(Color.rgb(29, 105, 29))
 
             binding.radioGroup.visibility = View.VISIBLE
             binding.btnLetsPlay.visibility = View.VISIBLE
         }
         binding.btnFriend.setOnClickListener{
+            gameMode = "Friend"
             binding.btnAI.setBackgroundColor(Color.rgb(139,16,16))
             binding.btnFriend.setBackgroundColor(Color.rgb(139,16,16))
 
@@ -55,19 +58,24 @@ class StartGame : AppCompatActivity() {
 
             if(selectedOptionId == -1) {
                 Toast.makeText(this, "Choose amount of rounds", Toast.LENGTH_SHORT).show()
-            }else{
+                return@setOnClickListener
+            }
                 val selectedRadioButton = findViewById<RadioButton>(selectedOptionId)
                 val roundsText = selectedRadioButton.text.toString()
 
                 val rounds = roundsText.filter { it.isDigit() }.toIntOrNull()
 
                 if(rounds != null) {
-                    Toast.makeText(this, "You choose $rounds rounds", Toast.LENGTH_SHORT).show()
-                    val newIntent = Intent(this, GameBoardFriend::class.java)
-                    newIntent.putExtra("ROUNDS", rounds)
-                    startActivity(newIntent)
+                    if (gameMode == "Friend") {
+                        val friendIntent = Intent(this, GameBoardFriend::class.java)
+                        friendIntent.putExtra("ROUNDS", rounds)
+                        startActivity(friendIntent)
+                    }else if (gameMode == "AI") {
+                    val aiIntent = Intent(this, GameBoardAI::class.java)
+                    aiIntent.putExtra("ROUNDS", rounds)
+                    startActivity(aiIntent)
                 } else {
-                    Toast.makeText(this, "Invalid selection", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Choose game mode (Computer or Friend)", Toast.LENGTH_SHORT).show()
                 }
             }
         }
