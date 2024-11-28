@@ -45,7 +45,7 @@ class GameBoardAI : GameBoardFriend() {
             super.handlePlayerGuess(player, guessHigher)
         }else {
             val aiGuessHigher = calculateAIMove()
-            super.handlePlayerGuess(player, aiGuessHigher)
+            super.handlePlayerGuess(2, aiGuessHigher)
         }
     }
     private fun calculateAIMove(): Boolean {
