@@ -21,15 +21,15 @@
         android:layout_marginTop="-90dp"
         android:layout_marginBottom="-90dp"/>
 
-    <!-- Rubrik för knappar -->
     <TextView
         android:id="@+id/buttonHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Want to play with: "
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColorHint="@color/black"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,8 +53,9 @@
             android:backgroundTint="@color/red"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:textSize="20sp"
             android:layout_marginTop="30dp"
-            android:text="Against computer" />
+            android:text="Against AI" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFriend"
@@ -63,6 +64,7 @@
             android:backgroundTint="@color/red"
             android:text="Against a friend"
             android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"/>
     </LinearLayout>
@@ -72,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="First to .. ?"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
