@@ -22,7 +22,7 @@ open class GameBoardFriend : AppCompatActivity() {
     protected var p2Guess: Boolean = false
 
     protected var p1Choice: Boolean = false
-    private var p2Choice: Boolean = false
+    protected var p2Choice: Boolean = false
 
     var previousCardValue = 0
     protected var currentRound = 1
