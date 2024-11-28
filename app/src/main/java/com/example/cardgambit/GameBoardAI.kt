@@ -1,5 +1,6 @@
 package com.example.cardgambit
 
+
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -16,9 +17,16 @@ class GameBoardAI : GameBoardFriend() {
         binding.btnPlayer2Lower.visibility = View.GONE
         binding.btnPlayer2Higher.visibility = View.GONE
     }
+
+
+class GameBoardAI : GameBoardFriend() {
+
+
     override fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
         if (player == 1) {
+            // Player 1 makes their choice manually
             super.handlePlayerGuess(player, guessHigher)
+
 
             binding.btnPlayer1Higher.setBackgroundColor(Color.TRANSPARENT)
             binding.btnPlayer1Lower.setBackgroundColor(Color.TRANSPARENT)
@@ -32,13 +40,21 @@ class GameBoardAI : GameBoardFriend() {
             if (p1Guess) {
                 val aiChoice = calculateAIMove()
                 handleAIGuess(aiChoice)
+
+            // Trigger AI's move automatically
+            if (p1Guess) {
+                val aiChoice = calculateAIMove()
+                super.handlePlayerGuess(2, aiChoice)
+
             }
         }
     }
 
     private fun calculateAIMove(): Boolean {
+        // Simple AI logic: Random higher or lower
         return (0..1).random() == 1
     }
+
 
     private fun handleAIGuess(guessHigher: Boolean) {
         p2Choice = guessHigher
@@ -62,3 +78,6 @@ class GameBoardAI : GameBoardFriend() {
         }
     }
 }
+
+}
+
