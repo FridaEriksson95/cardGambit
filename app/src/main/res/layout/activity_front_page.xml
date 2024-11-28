@@ -26,7 +26,7 @@
             android:id="@+id/tv_card_gambit"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="-40dp"
+            android:layout_marginTop="-30dp"
             android:elegantTextHeight="false"
             android:fontFamily="@font/inknut_antiqua_bold"
             android:lineSpacingExtra="0dp"

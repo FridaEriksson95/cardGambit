@@ -17,6 +17,7 @@ class StartGame : AppCompatActivity() {
 
     private lateinit var binding : ActivityStartGameBinding
     private var gameMode : String? = null
+    var isAI = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -34,6 +35,7 @@ class StartGame : AppCompatActivity() {
 
         binding.btnAI.setOnClickListener{
             gameMode = "AI"
+            isAI = true
             binding.btnAI.setBackgroundColor(Color.rgb(139,16,16))
             binding.btnFriend.setBackgroundColor(Color.rgb(139,16,16))
 
@@ -68,10 +70,12 @@ class StartGame : AppCompatActivity() {
                     if (gameMode == "Friend") {
                         val friendIntent = Intent(this, GameBoardFriend::class.java)
                         friendIntent.putExtra("ROUNDS", rounds)
+                        friendIntent.putExtra("IsAI", isAI)
                         startActivity(friendIntent)
                     }else if (gameMode == "AI") {
                     val aiIntent = Intent(this, GameBoardAI::class.java)
                     aiIntent.putExtra("ROUNDS", rounds)
+                        aiIntent.putExtra("IsAI", isAI)
                     startActivity(aiIntent)
                 } else {
                     Toast.makeText(this, "Choose game mode (Computer or Friend)", Toast.LENGTH_SHORT).show()

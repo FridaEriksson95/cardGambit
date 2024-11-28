@@ -15,7 +15,7 @@ import java.lang.Math.random
 
 open class GameBoardFriend : AppCompatActivity() {
 
-    private lateinit var binding: ActivityGameBoardFriendBinding
+    protected lateinit var binding: ActivityGameBoardFriendBinding
     protected lateinit var gamefrag : GameFragment
 
     protected var p1Guess: Boolean = false
@@ -27,6 +27,7 @@ open class GameBoardFriend : AppCompatActivity() {
     var previousCardValue = 0
     protected var currentRound = 1
     protected var totalRounds: Int = 0
+    protected var isAI: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,7 @@ open class GameBoardFriend : AppCompatActivity() {
 
         gamefrag = GameFragment()
 
+        isAI = intent.getBooleanExtra("isAI", false)
         totalRounds = intent.getIntExtra("ROUNDS", 1)
         setupGame()
 
@@ -129,7 +131,9 @@ open class GameBoardFriend : AppCompatActivity() {
 
         val winner = when {
             gamefrag.player1score > gamefrag.player2score -> "Player 1"
-            gamefrag.player2score > gamefrag.player1score -> "Player 2"
+            gamefrag.player2score > gamefrag.player1score -> {
+                if (isAI) "AI" else "Player 2"
+            }
             else -> "It's a draw!"
         }
         resultIntent.putExtra("Winner", winner)
