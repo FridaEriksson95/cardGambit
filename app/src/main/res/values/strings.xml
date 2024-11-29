@@ -2,4 +2,14 @@
     <string name="app_name">cardGambit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Instruktioner">När du startar spelet kommer
+        ett random kort att dras.
+        Om du spelar mot en vän ska
+        ni båda gissa om kortet som
+        vänds upp efter blir
+        högre eller lägre än föregående
+        kort. Den som gissar rätt får
+        poäng, om ni båda gissar rätt,
+        får båda poäng. Mest rätt efter
+        antal valda rundor - vinner!</string>
 </resources>
