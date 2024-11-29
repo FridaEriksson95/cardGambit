@@ -3,6 +3,8 @@ package com.example.cardgambit
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -114,12 +116,13 @@ open class GameBoardFriend : AppCompatActivity() {
             resetTurn()
             updateScores()
 
+            val handler = Handler(Looper.getMainLooper())
             currentRound++
             if (currentRound <= totalRounds) {
                 updateRoundCount()
             } else {
-                binding.ivBackImage.postDelayed({
-                    endGame()
+                handler.postDelayed({ // valde handler för att ha bättre rendering med fragment
+                    endGame()         // byten efter rundorna är klara
                 }, 2000)
             }
         }
