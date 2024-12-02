@@ -1,6 +1,5 @@
 package com.example.cardgambit
 
-
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -13,9 +12,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cardgambit.databinding.ActivityStartGameBinding
 
+//Class where player get to choose who to play against and choose amount of rounds
 class StartGame : AppCompatActivity() {
 
     private lateinit var binding : ActivityStartGameBinding
+    //Variables to check is friend or AI is choosen
     private var gameMode : String? = null
     var isAI = false
 
@@ -24,7 +25,7 @@ class StartGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val binding = ActivityStartGameBinding.inflate(layoutInflater)
+        binding = ActivityStartGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -33,6 +34,7 @@ class StartGame : AppCompatActivity() {
             insets
         }
 
+        //If against AI is clicked it highlights in green and radiobutton displays
         binding.btnAI.setOnClickListener{
             gameMode = "AI"
             isAI = true
@@ -44,6 +46,7 @@ class StartGame : AppCompatActivity() {
             binding.radioGroup.visibility = View.VISIBLE
             binding.btnLetsPlay.visibility = View.VISIBLE
         }
+        //If against a friend is clicked it highlights in green and radiobuttons display
         binding.btnFriend.setOnClickListener{
             gameMode = "Friend"
             binding.btnAI.setBackgroundColor(Color.rgb(139,16,16))
@@ -54,6 +57,7 @@ class StartGame : AppCompatActivity() {
             binding.radioGroup.visibility = View.VISIBLE
             binding.btnLetsPlay.visibility = View.VISIBLE
         }
+        //When playermode and amount of rounds is chosed, lets play button will start the choosen options
         binding.btnLetsPlay.setOnClickListener {
             val selectedOptionId = binding.radioGroup.checkedRadioButtonId
 
@@ -68,7 +72,7 @@ class StartGame : AppCompatActivity() {
 
                 if(rounds != null) {
                     if (gameMode == "Friend") {
-                        val friendIntent = Intent(this, GameBoardFriend::class.java)
+                        val friendIntent = Intent(this, GameBoard::class.java)
                         friendIntent.putExtra("ROUNDS", rounds)
                         friendIntent.putExtra("IsAI", isAI)
                         startActivity(friendIntent)
@@ -78,7 +82,7 @@ class StartGame : AppCompatActivity() {
                         aiIntent.putExtra("IsAI", isAI)
                     startActivity(aiIntent)
                 } else {
-                    Toast.makeText(this, "Choose game mode (Computer or Friend)", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Choose gamemode (AI or Friend)", Toast.LENGTH_SHORT).show()
                 }
             }
         }

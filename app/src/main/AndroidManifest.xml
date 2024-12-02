@@ -20,7 +20,7 @@
             android:name=".StartGame"
             android:exported="false" />
         <activity
-            android:name=".GameBoardFriend"
+            android:name=".GameBoard"
             android:exported="false" />
         <activity
             android:name=".Instructions"

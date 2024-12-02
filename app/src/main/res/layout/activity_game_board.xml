@@ -5,10 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameBoardFriend"
+    tools:context=".GameBoard"
     android:background="@color/white"
     android:backgroundTint="@color/white">
 
+<!--    Player 2 buttons-->
     <LinearLayout
         android:id="@+id/linearLayoutPlayer2Buttons"
         android:layout_width="407dp"
@@ -35,16 +36,15 @@
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="27dp"
             android:visibility="visible"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2_higher"
-            android:rotation="180"
-            android:text="Higher"
             app:icon="@drawable/baseline_arrow_drop_up_24"
+            android:text="Higher"
             android:layout_width="202dp"
             android:layout_height="match_parent"
+            android:rotation="180"
             android:layout_marginBottom="4dp"
             android:backgroundTint="@color/red"
             android:gravity="center_horizontal"
@@ -57,9 +57,9 @@
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="27dp"
             android:visibility="visible"/>
 
+<!--        Player 2 if AI buttons-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2AI_lower"
             app:icon="@drawable/baseline_arrow_drop_down_24"
@@ -79,14 +79,13 @@
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="27dp"
             android:visibility="gone"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2AI_higher"
-            android:rotation="180"
-            android:text="Higher"
             app:icon="@drawable/baseline_arrow_drop_up_24"
+            android:text="Higher"
+            android:rotation="180"
             android:layout_width="202dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
@@ -101,17 +100,16 @@
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="27dp"
             android:visibility="gone"/>
 
 
     </LinearLayout>
-
+<!--Player 1 score counter textview-->
     <TextView
         android:id="@+id/player1_score"
+        android:text="Player 1 score: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player 1 score: "
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -120,24 +118,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_backImage" />
 
+<!--    Imageview with card that plays-->
     <ImageView
         android:id="@+id/iv_backImage"
-        android:layout_width="240dp"
-        android:layout_height="285dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/backsidecard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="25dp"
+        app:layout_constraintBottom_toTopOf="@id/player1_score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501"
-        app:srcCompat="@drawable/backsidecard" />
+        app:layout_constraintTop_toBottomOf="@id/player2_score"
+        app:layout_constraintVertical_bias="0.501" />
 
+<!--Player 2 score counter-->
     <TextView
         android:id="@+id/player2_score"
+        android:text="Player 2 score: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="180"
-        android:text="Player 2 score: "
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -146,13 +147,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutPlayer2Buttons" />
 
+<!--    Round counter textview-->
     <TextView
         android:id="@+id/count_rounds"
+        android:text="Round: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="328dp"
         android:rotation="270"
-        android:text="Round: "
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="22sp"
@@ -163,11 +165,12 @@
         app:layout_constraintLeft_toLeftOf="@+id/iv_backImage"
         app:layout_constraintVertical_bias="0.525" />
 
+<!--    Player 1 buttons-->
     <LinearLayout
         android:id="@+id/linearLayoutPlayer1Buttons"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_height="147dp"
+        android:layout_height="150dp"
         android:layout_marginTop="28dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -179,43 +182,41 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player1_higher"
+            app:icon="@drawable/baseline_arrow_drop_up_24"
+            android:text="Higher"
             android:layout_width="202dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
             android:backgroundTint="@color/red"
             android:gravity="center_horizontal"
-            android:text="Higher"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:cornerRadius="46dp"
-            app:icon="@drawable/baseline_arrow_drop_up_24"
             app:iconGravity="top"
             app:iconPadding="@dimen/cardview_default_elevation"
             app:iconSize="90dp"
             app:iconTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="27dp" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player1_lower"
+            app:icon="@drawable/baseline_arrow_drop_down_24"
+            android:text="Lower"
             android:layout_width="202dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
             android:backgroundTint="@color/red"
             android:gravity="center_horizontal"
-            android:text="Lower"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:cornerRadius="46dp"
-            app:icon="@drawable/baseline_arrow_drop_down_24"
             app:iconGravity="top"
             app:iconPadding="@dimen/cardview_default_elevation"
             app:iconSize="90dp"
             app:iconTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="27dp" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

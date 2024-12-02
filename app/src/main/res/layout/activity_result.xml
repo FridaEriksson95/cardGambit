@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Result"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".Result">
 
     <ImageView
         android:id="@+id/Bridge"
@@ -15,8 +15,10 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bridgecards" />
 
+<!--    Gamename-->
     <TextView
         android:id="@+id/tv_card_gambit"
+        android:text="CARD GAMBIT"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:elegantTextHeight="false"
@@ -27,7 +29,6 @@
         android:shadowDx="8"
         android:shadowDy="8"
         android:shadowRadius="30"
-        android:text="CARD GAMBIT"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="60sp"
@@ -36,8 +37,10 @@
         app:layout_constraintTop_toBottomOf="@+id/Bridge"
         app:layout_constraintBottom_toTopOf="@+id/tv_winner"/>
 
+<!--    Winner textview-->
     <TextView
         android:id="@+id/tv_winner"
+        android:text="WINNER   IS "
         android:layout_width="413dp"
         android:layout_height="203dp"
         android:layout_marginTop="250dp"
@@ -45,7 +48,6 @@
         android:fontFamily="@font/inknut_antiqua_bold"
         android:lineSpacingExtra="0dp"
         android:lineSpacingMultiplier="0.5"
-        android:text="WINNER   IS "
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="60sp"
@@ -58,13 +60,14 @@
         app:layout_constraintTop_toBottomOf="@+id/Bridge"
         app:layout_constraintVertical_bias="0.33" />
 
+<!--    Winner presenter view-->
     <TextView
         android:id="@+id/tv_result"
+        android:hint="vinnaren"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/inknut_antiqua"
-        android:hint="vinnaren"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -73,8 +76,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_winner" />
 
+<!--    Buttons for restart and quit-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_restartgame"
+        android:text=" RESTART "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -85,13 +90,13 @@
         android:backgroundTint="@color/red"
         android:layout_marginRight="30dp"
         android:textStyle="bold"
-        android:text=" RESTART "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_quit"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_quit"
+        android:text="     QUIT     "
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
@@ -101,7 +106,6 @@
         android:layout_marginBottom="20dp"
         android:layout_weight="1"
         android:backgroundTint="@color/red"
-        android:text="     QUIT     "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_restartgame" />
