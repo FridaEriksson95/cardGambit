@@ -38,12 +38,12 @@ class GameFragment : Fragment() {
     }
 
     fun isGuessCorrect(newCardValue: Int, guessHigher: Boolean): Boolean {
-        return if (guessHigher) {
-            newCardValue > previousCardValue
-        } else {
-            newCardValue < previousCardValue
+            return when {
+                newCardValue == previousCardValue -> false
+                guessHigher -> newCardValue > previousCardValue
+                else -> newCardValue < previousCardValue
+            }
         }
-    }
 
     fun updateScore(player: Int, correct: Boolean) {
         if (correct) {

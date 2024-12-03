@@ -17,7 +17,6 @@ class GameBoardAI : GameBoardFriend() {
         binding.btnPlayer2Higher.visibility = View.GONE
     }
 
-
     override fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
         if (player == 1) {
             super.handlePlayerGuess(player, guessHigher)

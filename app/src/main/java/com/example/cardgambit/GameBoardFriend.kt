@@ -41,7 +41,7 @@ open class GameBoardFriend : AppCompatActivity() {
 
         gamefrag = GameFragment()
 
-        isAI = intent.getBooleanExtra("isAI", false)
+        isAI = intent.getBooleanExtra("IsAI", false)
         totalRounds = intent.getIntExtra("ROUNDS", 1)
         setupGame()
 
@@ -60,6 +60,7 @@ open class GameBoardFriend : AppCompatActivity() {
     protected open fun setupGame() {
         val initialCard = gamefrag.getRandomCard()
         binding.ivBackImage.setImageResource(initialCard.first)
+        gamefrag.previousCardValue = initialCard.second
 
         updateScores()
         updateRoundCount()
