@@ -3,13 +3,14 @@ package com.example.cardgambit
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import com.example.cardgambit.databinding.ActivityGameBoardFriendBinding
 
-class GameBoardAI : GameBoardFriend() {
+//Gameboard for if player is against AI, inheritance functionality from Gameboard
+class GameBoardAI : GameBoard() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //Makes sure AIs buttons are displayed and player 2(friends) buttons are gone
         binding.btnPlayer2AIHigher.visibility = View.VISIBLE
         binding.btnPlayer2AILower.visibility = View.VISIBLE
 
@@ -17,12 +18,10 @@ class GameBoardAI : GameBoardFriend() {
         binding.btnPlayer2Higher.visibility = View.GONE
     }
 
+    //Function for handleplayerGuess when against AI, sets color for AIs guesses and make sure player 1 make first move
     override fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
         if (player == 1) {
             super.handlePlayerGuess(player, guessHigher)
-
-            binding.btnPlayer1Higher.setBackgroundColor(Color.TRANSPARENT)
-            binding.btnPlayer1Lower.setBackgroundColor(Color.TRANSPARENT)
 
             val selectedColor = Color.rgb(29, 105, 29)
             if (guessHigher) {
@@ -37,10 +36,12 @@ class GameBoardAI : GameBoardFriend() {
         }
     }
 
+    //Calculates a random move for AI
     private fun calculateAIMove(): Boolean {
         return (0..1).random() == 1
     }
 
+    //Handles guesses when playing against AI
     private fun handleAIGuess(guessHigher: Boolean) {
         p2Choice = guessHigher
         p2Guess = true

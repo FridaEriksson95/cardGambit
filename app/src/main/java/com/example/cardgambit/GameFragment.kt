@@ -1,13 +1,11 @@
 package com.example.cardgambit
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 
+//GameFragment that handles the cards in the game
 class GameFragment : Fragment() {
 
+    //map of the playing cards
     val cardsMap = mapOf(
         R.drawable.one to 1,
         R.drawable.two to 2,
@@ -24,19 +22,28 @@ class GameFragment : Fragment() {
         R.drawable.thirteen to 13
     )
 
+    private var previousCard : Int? = null
     var previousCardValue: Int = getRandomCardValue()
     var player1score = 0
     var player2score = 0
 
+    //Randomize a card during each round, checks so same card don't display again directly in new round
     fun getRandomCard(): Pair<Int, Int> {
-        val randomCard = cardsMap.keys.random()
+        var randomCard :Int
+        do {
+            randomCard = cardsMap.keys.random()
+        } while (randomCard == previousCard)
+
+        previousCard = randomCard
         return Pair(randomCard, cardsMap[randomCard]!!)
     }
 
+    //Checks the value of the card
     private fun getRandomCardValue(): Int {
         return cardsMap.values.random()
     }
 
+    //Function to check if player guessed correct based on cardvalue and guess
     fun isGuessCorrect(newCardValue: Int, guessHigher: Boolean): Boolean {
             return when {
                 newCardValue == previousCardValue -> false
@@ -45,16 +52,10 @@ class GameFragment : Fragment() {
             }
         }
 
+    //Function to update the scores
     fun updateScore(player: Int, correct: Boolean) {
         if (correct) {
             if (player == 1) player1score++ else player2score++
         }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_game, container, false)
     }
 }

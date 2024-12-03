@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cardgambit.databinding.ActivityFrontPageBinding
 
+//Front page, starter of game
 class FrontPage : AppCompatActivity() {
 
     private lateinit var binding : ActivityFrontPageBinding
@@ -16,7 +17,7 @@ class FrontPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val binding = ActivityFrontPageBinding.inflate(layoutInflater)
+        binding = ActivityFrontPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -25,11 +26,13 @@ class FrontPage : AppCompatActivity() {
             insets
         }
 
+        //Starts the game when Start Game button is pressed
         binding.btnStartgame.setOnClickListener{
             val newIntent = Intent(this, StartGame::class.java)
             startActivity(newIntent)
         }
 
+        //Leads you to instructions when How To play is pressed
         binding.btnInstructions.setOnClickListener{
             val newIntent = Intent(this, Instructions::class.java)
             startActivity(newIntent)

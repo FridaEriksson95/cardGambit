@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--design to choose player and amount of rounds-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +10,7 @@
     tools:context=".StartGame">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/cardBridge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
@@ -21,11 +22,12 @@
         android:layout_marginTop="-90dp"
         android:layout_marginBottom="-90dp"/>
 
+<!--   Desgin to choose who to play with-->
     <TextView
         android:id="@+id/buttonHeader"
+        android:text="Want to play with: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Want to play with: "
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColorHint="@color/black"
@@ -33,8 +35,9 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/cardBridge" />
 
+<!--Buttons, ai or friend-->
     <LinearLayout
         android:id="@+id/buttonContainer"
         android:layout_width="match_parent"
@@ -47,6 +50,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAI"
+            android:text="Against AI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -54,26 +58,26 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_marginTop="30dp"
-            android:text="Against AI" />
+            android:layout_marginTop="30dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFriend"
+            android:text="Against a friend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red"
-            android:text="Against a friend"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"/>
     </LinearLayout>
 
+<!--    Amount of rounds choice, radiobuttons-->
     <TextView
         android:id="@+id/radioButtonHeader"
+        android:text="First to .. ?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First to .. ?"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -95,37 +99,38 @@
 
         <RadioButton
             android:id="@+id/radioOption1"
+            android:text="First to 3"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/custom_radio_color"
-            android:text="First to 3" />
+            android:buttonTint="@color/custom_radio_color"/>
 
         <RadioButton
             android:id="@+id/radioOption2"
+            android:text="First to 5"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/custom_radio_color"
-            android:text="First to 5" />
+            android:buttonTint="@color/custom_radio_color"/>
 
         <RadioButton
             android:id="@+id/radioOption3"
+            android:text="First to 10"
             android:textColor="@color/black"
             android:buttonTint="@color/styles"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="First to 10" />
+            android:layout_height="wrap_content"/>
     </RadioGroup>
 
+<!--    Design for button to start game-->
     <Button
         android:id="@+id/btn_letsPlay"
+        android:text="LET'S PLAY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="60dp"
         android:backgroundTint="@color/red"
-        android:text="LET'S PLAY"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -8,6 +8,7 @@
     android:background="@color/white"
     tools:context=".FrontPage">
 
+<!--    Frontpage layout-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -17,13 +18,15 @@
 
         <ImageView
             android:id="@+id/Bridge"
+            android:src="@drawable/bridgecards"
             android:layout_width="match_parent"
             android:layout_height="198dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bridgecards" />
+            android:scaleType="centerCrop" />
 
+<!--        Game title-->
         <TextView
             android:id="@+id/tv_card_gambit"
+            android:text="CARD GAMBIT"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="-30dp"
@@ -35,24 +38,22 @@
             android:shadowDx="8"
             android:shadowDy="8"
             android:shadowRadius="30"
-            android:text="CARD GAMBIT"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="60sp"
             android:textStyle="bold" />
 
-
+<!--Backside of card image-->
         <ImageView
             android:id="@+id/Card"
+            android:src="@drawable/backsidecard"
             android:layout_width="match_parent"
             android:layout_marginBottom="70dp"
             android:layout_height="wrap_content"
-            android:scaleType="fitCenter"
-            android:src="@drawable/backsidecard" />
-
-
+            android:scaleType="fitCenter" />
     </LinearLayout>
 
+<!--    Buttons to start game or to get instructions-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,35 +61,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Card"
+        app:layout_constraintTop_toBottomOf="@id/Card"
         app:layout_constraintVertical_weight="2">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_startgame"
-            android:layout_width="wrap_content"
+            android:text="      START      "
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/red"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginRight="30dp"
-            android:text="      START      "
-            tools:layout_editor_absoluteX="60dp"
-            tools:layout_editor_absoluteY="836dp" />
+            android:layout_marginRight="30dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_instructions"
-            android:layout_width="wrap_content"
+            android:text="How To Play"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/red"
-            android:text="How To Play"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="365dp"
-            tools:layout_editor_absoluteY="818dp" />
-
+            android:textStyle="bold"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
