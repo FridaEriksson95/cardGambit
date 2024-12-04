@@ -40,30 +40,32 @@
 <!--    Winner textview-->
     <TextView
         android:id="@+id/tv_winner"
-        android:text="WINNER   IS "
-        android:layout_width="413dp"
-        android:layout_height="203dp"
+        android:text="@string/winner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
         android:layout_marginBottom="315dp"
         android:fontFamily="@font/inknut_antiqua_bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        app:autoSizeTextType="uniform"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:padding="10dp"
         android:lineSpacingExtra="0dp"
         android:lineSpacingMultiplier="0.5"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_restartgame"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Bridge"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.1" />
 
 <!--    Winner presenter view-->
     <TextView
         android:id="@+id/tv_result"
-        android:hint="vinnaren"
+        android:hint="the winner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -79,7 +81,7 @@
 <!--    Buttons for restart and quit-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_restartgame"
-        android:text=" RESTART "
+        android:text="@string/restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -96,7 +98,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_quit"
-        android:text="     QUIT     "
+        android:text="@string/quit"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_width="wrap_content"

@@ -39,7 +39,7 @@
             android:layout_marginRight="60dp"
             android:shadowColor="@color/red"
             android:shadowRadius="1"
-            android:text="@string/Instruktioner"
+            android:text="@string/Instructions"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -48,7 +48,7 @@
 <!--        Button to start game-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_startgame"
-            android:text="   START  "
+            android:text="@string/start_game"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
@@ -81,7 +81,7 @@
 
     <TextView
         android:id="@+id/tv_header_instructions"
-        android:text="INSTRUKTIONER"
+        android:text="@string/Instructions_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inknut_antiqua_bold"

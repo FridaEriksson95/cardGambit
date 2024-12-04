@@ -1,18 +1,41 @@
 <resources>
-    <string name="app_name">cardGambit</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="app_name">CARD GAMBIT</string>
+    <string name="start_game">START</string>
+    <string name="how_to_play">HOW TO PLAY</string>
+    <string name="play_against">Want to play against: </string>
+    <string name="against_ai">AI </string>
+    <string name="against_friend">A friend </string>
+    <string name="best_of">Best of:  </string>
+    <string name="radiobutton_3">3 rounds</string>
+    <string name="radiobutton_5">5 rounds</string>
+    <string name="radiobutton_10">10 rounds</string>
+    <string name="lets_play">LETS PLAY</string>
+    <string name="lower_button">LOWER</string>
+    <string name="higher_button">HIGHER</string>
+    <string name="p1_score">Player 1 Score: </string>
+    <string name="p2_score">Player 2 Score: </string>
+    <string name="p1_wins">PLAYER 1 </string>
+    <string name="p2_wins">PLAYER 2 </string>
+    <string name="ai_score">AI Score: </string>
+    <string name="draw">Its a draw!</string>
+    <string name="round">Round: %1$d of %2$d </string>
+    <string name="winner">WINNER   IS </string>
+    <string name="restart"> RESTART </string>
+    <string name="quit">     QUIT     </string>
+    <string name="Instructions_title">INSTRUCTIONS</string>
 <!--Instructions for how to play-->
-    <string name="Instruktioner">När du startar spelet kommer
-        ett random kort att dras.\n
-        Om du spelar mot en vän ska
-        ni båda gissa om kortet som
-        vänds upp efter blir
-        högre eller lägre än föregående
-        kort. Den som gissar rätt får
-        poäng. \n Spelar du mot AI så gör
-        du ditt drag först och AI efter.
-        Rätt gissning, ger poäng! \n
-        \n Mest rätt efter antal valda rundor \n
-        - vinner!</string>
+    <string name="Instructions">
+        When you start the game a
+        random card will be displayed.\n
+        If you play against a friend you
+        both are going to guess if the
+        next card that displays will be
+        higher or lower. Whoever guess right
+        will be one score merrier.\n
+        If you play against AI, you make
+        the first move then AI evaluates
+        their move. Right guess gives points!\n
+        The one with the highest score of
+        right guesses after selected amount
+        of rounds \n -Wins!</string>
 </resources>

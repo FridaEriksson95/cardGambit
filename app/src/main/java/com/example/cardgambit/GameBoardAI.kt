@@ -2,6 +2,8 @@ package com.example.cardgambit
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 
 //Gameboard for if player is against AI, inheritance functionality from Gameboard
@@ -18,7 +20,9 @@ class GameBoardAI : GameBoard() {
         binding.btnPlayer2Higher.visibility = View.GONE
     }
 
-    //Function for handleplayerGuess when against AI, sets color for AIs guesses and make sure player 1 make first move
+    /*Function for handleplayerGuess when against AI, sets color for AIs guesses and make sure player 1 make first move
+    then delay for AIs answer for 0.5sek
+     */
     override fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
         if (player == 1) {
             super.handlePlayerGuess(player, guessHigher)
@@ -30,8 +34,10 @@ class GameBoardAI : GameBoard() {
                 binding.btnPlayer1Lower.setBackgroundColor(selectedColor)
             }
             if (p1Guess) {
-                val aiChoice = calculateAIMove()
-                handleAIGuess(aiChoice)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    val aiChoice = calculateAIMove()
+                    handleAIGuess(aiChoice)
+                },500)
             }
         }
     }

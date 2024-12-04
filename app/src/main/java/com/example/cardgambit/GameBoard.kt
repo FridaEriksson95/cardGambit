@@ -108,7 +108,7 @@ open class GameBoard : AppCompatActivity() {
 
     //Updates round textview based on amount of rounds choosen in startgame
     protected fun updateRoundCount() {
-        binding.countRounds.text = "Round $currentRound of $totalRounds"
+        binding.countRounds.text = getString(R.string.round, currentRound, totalRounds)
     }
 
     //Evaluates players guesses and updates their score based on if the answer was correct or not
@@ -155,11 +155,11 @@ open class GameBoard : AppCompatActivity() {
 
             //Display winner in result textview
             val winner = when {
-                gamefrag.player1score > gamefrag.player2score -> "Player 1"
+                gamefrag.player1score > gamefrag.player2score -> getString(R.string.p1_wins)
                 gamefrag.player2score > gamefrag.player1score -> {
-                    if (isAI) "AI" else "Player 2"
+                    if (isAI) "AI" else getString(R.string.p2_wins)
                 }
-                else -> "It's a draw!"
+                else -> getString(R.string.draw)
             }
         resultIntent.putExtra("Winner", winner)
         startActivity(resultIntent)
@@ -197,7 +197,9 @@ open class GameBoard : AppCompatActivity() {
 
     //Updates the score textviews for each player
     protected fun updateScores() {
-        binding.player1Score.text = "Player 1 Score: ${gamefrag.player1score}"
-        binding.player2Score.text = "Player 2 Score: ${gamefrag.player2score}"
+        binding.player1Score.text = getString(R.string.p1_score) + "${gamefrag.player1score}"
+
+        val player2Label = if (isAI) getString(R.string.ai_score) else getString(R.string.p2_score)
+            binding.player2Score.text = "$player2Label: ${gamefrag.player2score}"
     }
 }

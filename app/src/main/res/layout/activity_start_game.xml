@@ -25,7 +25,7 @@
 <!--   Desgin to choose who to play with-->
     <TextView
         android:id="@+id/buttonHeader"
-        android:text="Want to play with: "
+        android:text="@string/play_against"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -50,7 +50,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAI"
-            android:text="Against AI"
+            android:text="@string/against_ai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -62,7 +62,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFriend"
-            android:text="Against a friend"
+            android:text="@string/against_friend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red"
@@ -75,7 +75,7 @@
 <!--    Amount of rounds choice, radiobuttons-->
     <TextView
         android:id="@+id/radioButtonHeader"
-        android:text="First to .. ?"
+        android:text="@string/best_of"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -99,7 +99,7 @@
 
         <RadioButton
             android:id="@+id/radioOption1"
-            android:text="First to 3"
+            android:text="@string/radiobutton_3"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
 
         <RadioButton
             android:id="@+id/radioOption2"
-            android:text="First to 5"
+            android:text="@string/radiobutton_5"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
 
         <RadioButton
             android:id="@+id/radioOption3"
-            android:text="First to 10"
+            android:text="@string/radiobutton_10"
             android:textColor="@color/black"
             android:buttonTint="@color/styles"
             android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
 <!--    Design for button to start game-->
     <Button
         android:id="@+id/btn_letsPlay"
-        android:text="LET'S PLAY"
+        android:text="@string/lets_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
