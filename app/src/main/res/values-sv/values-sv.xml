@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CARD GAMBIT</string>
+    <string name="start_game">STARTA</string>
+    <string name="how_to_play">SPELINSTRUKTIONER</string>
+    <string name="play_against">Vill du spela mot:  </string>
+    <string name="against_ai">En AI </string>
+    <string name="against_friend">En vän</string>
+    <string name="best_of">Bäst av:  </string>
+    <string name="radiobutton_3">3 rundor</string>
+    <string name="radiobutton_5">5 rundor</string>
+    <string name="radiobutton_10">10 rundor</string>
+    <string name="lets_play">BÖRJA SPELA</string>
+    <string name="lower_button">LÄGRE</string>
+    <string name="higher_button">HÖGRE</string>
+    <string name="p1_score">Spelare 1 Poäng: </string>
+    <string name="p2_score">Spelare 2 Poäng: </string>
+    <string name="p1_wins">SPELARE 1 </string>
+    <string name="p2_wins">SPELARE 2 </string>
+    <string name="ai_score">AI Poäng:  </string>
+    <string name="draw">Oavgjort!</string>
+    <string name="round">Runda: %1$d av %2$d </string>
+    <string name="winner">VINNAREN ÄR </string>
+    <string name="restart"> OMSTART </string>
+    <string name="quit">AVSLUTA</string>
+    <string name="Instructions_title">INSTRUKTIONER</string>
+    <string name="Instructions"> När du startar spelet kommer
+        ett random kort att dras.\n
+        Om du spelar mot en vän ska
+        ni båda gissa om kortet som
+        vänds upp efter blir
+        högre eller lägre än föregående
+        kort. Den som gissar rätt får
+        poäng. \n Spelar du mot AI så gör
+        du ditt drag först och AI efter.
+        Rätt gissning, ger poäng! \n
+        \n Mest rätt efter antal valda rundor \n
+        - Vinner!</string>
+
+</resources>

@@ -20,7 +20,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2_lower"
             app:icon="@drawable/baseline_arrow_drop_down_24"
-            android:text="Lower"
+            android:text="@string/lower_button"
             android:rotation="180"
             android:layout_width="203dp"
             android:layout_height="match_parent"
@@ -32,7 +32,7 @@
             android:textStyle="bold"
             app:cornerRadius="46dp"
             app:iconGravity="top"
-            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconPadding="-26dp"
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2_higher"
             app:icon="@drawable/baseline_arrow_drop_up_24"
-            android:text="Higher"
+            android:text="@string/higher_button"
             android:layout_width="202dp"
             android:layout_height="match_parent"
             android:rotation="180"
@@ -53,7 +53,7 @@
             android:textStyle="bold"
             app:cornerRadius="46dp"
             app:iconGravity="top"
-            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconPadding="-26dp"
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +63,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2AI_lower"
             app:icon="@drawable/baseline_arrow_drop_down_24"
-            android:text="Lower"
+            android:text="@string/lower_button"
             android:rotation="180"
             android:layout_width="203dp"
             android:layout_height="match_parent"
@@ -75,7 +75,7 @@
             android:textStyle="bold"
             app:cornerRadius="46dp"
             app:iconGravity="top"
-            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconPadding="-26dp"
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +84,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player2AI_higher"
             app:icon="@drawable/baseline_arrow_drop_up_24"
-            android:text="Higher"
+            android:text="@string/higher_button"
             android:rotation="180"
             android:layout_width="202dp"
             android:layout_height="match_parent"
@@ -96,7 +96,7 @@
             android:textStyle="bold"
             app:cornerRadius="46dp"
             app:iconGravity="top"
-            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconPadding="-26dp"
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -107,7 +107,7 @@
 <!--Player 1 score counter textview-->
     <TextView
         android:id="@+id/player1_score"
-        android:text="Player 1 score: "
+        android:text="@string/p1_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -135,7 +135,7 @@
 <!--Player 2 score counter-->
     <TextView
         android:id="@+id/player2_score"
-        android:text="Player 2 score: "
+        android:text="@string/p2_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="180"
@@ -150,7 +150,7 @@
 <!--    Round counter textview-->
     <TextView
         android:id="@+id/count_rounds"
-        android:text="Round: "
+        android:text="@string/round"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="328dp"
@@ -183,7 +183,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player1_higher"
             app:icon="@drawable/baseline_arrow_drop_up_24"
-            android:text="Higher"
+            android:text="@string/higher_button"
             android:layout_width="202dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
@@ -194,7 +194,7 @@
             android:textStyle="bold"
             app:cornerRadius="46dp"
             app:iconGravity="top"
-            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconPadding="-26dp"
             app:iconSize="90dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -202,7 +202,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_player1_lower"
             app:icon="@drawable/baseline_arrow_drop_down_24"
-            android:text="Lower"
+            android:text="@string/lower_button"
             android:layout_width="202dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
@@ -213,10 +213,10 @@
             android:textStyle="bold"
             app:cornerRadius="46dp"
             app:iconGravity="top"
-            app:iconPadding="@dimen/cardview_default_elevation"
+            app:iconPadding="-26dp"
             app:iconSize="90dp"
             app:iconTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
