@@ -21,8 +21,7 @@ class GameBoardAI : GameBoard() {
     }
 
     /*Function for handleplayerGuess when against AI, sets color for AIs guesses and make sure player 1 make first move
-    then delay for AIs answer for 0.5sek
-     */
+    then delay for AIs answer for 0.5sek*/
     override fun handlePlayerGuess(player: Int, guessHigher: Boolean) {
         if (player == 1) {
             super.handlePlayerGuess(player, guessHigher)

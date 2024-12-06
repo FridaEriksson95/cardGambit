@@ -45,17 +45,20 @@ class GameFragment : Fragment() {
 
     //Function to check if player guessed correct based on cardvalue and guess
     fun isGuessCorrect(newCardValue: Int, guessHigher: Boolean): Boolean {
-            return when {
-                newCardValue == previousCardValue -> false
-                guessHigher -> newCardValue > previousCardValue
-                else -> newCardValue < previousCardValue
+        return if (guessHigher) {
+            newCardValue > previousCardValue
+        } else {
+            newCardValue < previousCardValue
+//            return when {
+//                newCardValue == previousCardValue -> false
+//                guessHigher -> newCardValue > previousCardValue
+//                else -> newCardValue < previousCardValue
             }
         }
 
     //Function to update the scores
-    fun updateScore(player: Int, correct: Boolean) {
-        if (correct) {
-            if (player == 1) player1score++ else player2score++
+    fun updateScore(player1Correct : Boolean, player2Correct: Boolean) {
+        if (player1Correct) player1score++
+        if (player2Correct) player2score++
         }
     }
-}
