@@ -49,10 +49,6 @@ class GameFragment : Fragment() {
             newCardValue > previousCardValue
         } else {
             newCardValue < previousCardValue
-//            return when {
-//                newCardValue == previousCardValue -> false
-//                guessHigher -> newCardValue > previousCardValue
-//                else -> newCardValue < previousCardValue
             }
         }
 
