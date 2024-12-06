@@ -78,9 +78,9 @@ class StartGame : AppCompatActivity() {
                         startActivity(friendIntent)
                     }else if (gameMode == "AI") {
                     val aiIntent = Intent(this, GameBoardAI::class.java)
-                    aiIntent.putExtra("ROUNDS", rounds)
+                        aiIntent.putExtra("ROUNDS", rounds)
                         aiIntent.putExtra("IsAI", isAI)
-                    startActivity(aiIntent)
+                        startActivity(aiIntent)
                 } else {
                     Toast.makeText(this, "Choose gamemode (AI or Friend)", Toast.LENGTH_SHORT).show()
                 }

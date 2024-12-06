@@ -45,7 +45,7 @@ open class GameBoard : AppCompatActivity() {
         //Get functions and cards from fragment
         gamefrag = GameFragment()
 
-        //Intens to check if player is AI and to get amount of rounds
+        //Intents to check if player is AI and to get amount of rounds
         isAI = intent.getBooleanExtra("IsAI", false)
         totalRounds = intent.getIntExtra("ROUNDS", 1)
 
@@ -72,7 +72,7 @@ open class GameBoard : AppCompatActivity() {
         binding.ivBackImage.setImageResource(initialCard.first)
         gamefrag.previousCardValue = initialCard.second
 
-        updateScores()
+        setScore()
         updateRoundCount()
     }
 
@@ -123,15 +123,14 @@ open class GameBoard : AppCompatActivity() {
             val p2Correct = gamefrag.isGuessCorrect(newCardValue, p2Choice)
 
         //Update scores
-            gamefrag.updateScore(1, p1Correct)
-            gamefrag.updateScore(2, p2Correct)
+            gamefrag.updateScore(p1Correct, p2Correct)
 
         //Show new card
             binding.ivBackImage.setImageResource(newCardDrawable)
             previousCardValue = newCardValue
 
 
-            updateScores()
+            setScore()
             resetTurn()
 
             currentRound++
@@ -196,7 +195,7 @@ open class GameBoard : AppCompatActivity() {
     }
 
     //Updates the score textviews for each player
-    protected fun updateScores() {
+    protected fun setScore() {
         binding.player1Score.text = getString(R.string.p1_score) + "${gamefrag.player1score}"
 
         val player2Label = if (isAI) getString(R.string.ai_score) else getString(R.string.p2_score)
